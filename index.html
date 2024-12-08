@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DVS - Custom Websites</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>DVS Web Solutions</h1>
+    <p>Professional custom website creation services.</p>
+  </header>
+
+  <main>
+    <section class="services">
+      <h2>Our Services</h2>
+      <div class="service-item">
+        <h3>Business Website</h3>
+        <p>Price: $500</p>
+        <button class="order-btn" data-service="Business Website">Order</button>
+      </div>
+      <div class="service-item">
+        <h3>E-commerce Website</h3>
+        <p>Price: $1200</p>
+        <button class="order-btn" data-service="E-commerce Website">Order</button>
+      </div>
+      <div class="service-item">
+        <h3>Landing Page</h3>
+        <p>Price: $300</p>
+        <button class="order-btn" data-service="Landing Page">Order</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Popup Modal for Order Form -->
+<div id="orderModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Place Your Order</h2>
+    <!-- Form integrated with Formspree -->
+    <form
+      action="https://formspree.io/f/xdkovaqo"
+      method="POST"
+      id="orderForm"
+    >
+      <label>
+        Name:
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Email:
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Description:
+        <textarea name="message" rows="4" required></textarea>
+      </label>
+      <!-- Hidden field to capture the selected service -->
+      <input type="hidden" name="service" id="serviceType">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- Popup Modal for Thank You Message -->
+<div id="thankYouModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Thank You!</h2>
+    <p>Your order has been successfully submitted. We will contact you soon!</p>
+    <button id="thankYouCloseBtn">Close</button>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
